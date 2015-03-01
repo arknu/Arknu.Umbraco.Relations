@@ -187,3 +187,8 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+
+# Umbraco folders
+/Arknu.Umbraco.Relations.Web/umbraco/*
+/Arknu.Umbraco.Relations.Web/umbraco_client/*
+/Arknu.Umbraco.Relations.Web/App_Data

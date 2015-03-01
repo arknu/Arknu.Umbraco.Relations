@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arknu.Umbraco.Relations.Web", "Arknu.Umbraco.Relations.Web\Arknu.Umbraco.Relations.Web.csproj", "{B58E4C4A-18CD-45E8-BA7D-EC1281463E08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arknu.Umbraco.Relations.Editor", "Arknu.Umbraco.Relations.Editor\Arknu.Umbraco.Relations.Editor.csproj", "{67EDA72B-2BA7-497F-BD4E-DCD508D535BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arknu.Umbraco.Relations", "Arknu.Umbraco.Relations\Arknu.Umbraco.Relations.csproj", "{A66A26E5-A2BC-4939-9598-6474ED2DD42B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B58E4C4A-18CD-45E8-BA7D-EC1281463E08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B58E4C4A-18CD-45E8-BA7D-EC1281463E08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B58E4C4A-18CD-45E8-BA7D-EC1281463E08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B58E4C4A-18CD-45E8-BA7D-EC1281463E08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67EDA72B-2BA7-497F-BD4E-DCD508D535BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67EDA72B-2BA7-497F-BD4E-DCD508D535BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67EDA72B-2BA7-497F-BD4E-DCD508D535BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67EDA72B-2BA7-497F-BD4E-DCD508D535BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66A26E5-A2BC-4939-9598-6474ED2DD42B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66A26E5-A2BC-4939-9598-6474ED2DD42B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66A26E5-A2BC-4939-9598-6474ED2DD42B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66A26E5-A2BC-4939-9598-6474ED2DD42B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
