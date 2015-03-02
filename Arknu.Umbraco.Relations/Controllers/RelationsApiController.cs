@@ -49,10 +49,20 @@ namespace Arknu.Umbraco.Relations.Controllers
             }
             foreach (var r in relations.Where(x => x.RelationType.Alias == type))
             {
-                var c = Umbraco.TypedContent(r.ChildId);
+                string name;
+                if (r.ChildId == id && reltype.IsBidirectional)
+                {
+                    var c = Umbraco.TypedContent(r.ParentId);
+                    name = c.Name;
+                }
+                else
+                {
+                    var c = Umbraco.TypedContent(r.ChildId);
+                    name = c.Name;
+                }
                 result.Add(new a.Relation()
                 {
-                    Name = c.Name,
+                    Name = name,
                     RelationId = r.Id,
                     ContentId = r.ChildId
                 });
