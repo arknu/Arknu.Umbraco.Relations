@@ -8,7 +8,7 @@
 
         var dialogOptions = {
             multiPicker: true,
-            entityType: "content",
+            entityType: "document",
             filterCssClass: "not-allowed not-published",
             startNodeId: null,
             callback: function (data) {
