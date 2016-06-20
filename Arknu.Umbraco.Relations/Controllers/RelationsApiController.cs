@@ -52,12 +52,12 @@ namespace Arknu.Umbraco.Relations.Controllers
                 string name;
                 if (r.ChildId == id && reltype.IsBidirectional)
                 {
-                    var c = Umbraco.TypedContent(r.ParentId);
+                    var c = ApplicationContext.Services.ContentService.GetById(r.ParentId);
                     name = c.Name;
                 }
                 else
                 {
-                    var c = Umbraco.TypedContent(r.ChildId);
+                    var c = ApplicationContext.Services.ContentService.GetById(r.ChildId);
                     name = c.Name;
                 }
                 result.Add(new a.Relation()
