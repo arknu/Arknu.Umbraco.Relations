@@ -1,14 +1,15 @@
 ﻿angular.module("umbraco")
-    .controller("Arknu.Umbraco.Relations.Controller", function ($scope, arknuRelationsResource, editorState, dialogService) {
+    .controller("Arknu.Umbraco.Relations.Controller", function ($scope, $location, arknuRelationsResource, editorState, dialogService, entityResource, navigationService) {
         var type = $scope.model.config.relationTypeAlias;
 
         arknuRelationsResource.getRelations(editorState.current.id, type).then(function (response) {
             $scope.model.items = response.data;
+            $scope.model.showOpenButton = true;
         });
 
         var dialogOptions = {
             multiPicker: true,
-            entityType: "content",
+            entityType: "document",
             filterCssClass: "not-allowed not-published",
             startNodeId: null,
             callback: function (data) {
@@ -45,4 +46,19 @@
             
             
         };
+
+        $scope.showNode = function (index) {
+            var item = $scope.model.items[index];
+            var id = item.contentId;
+            var section = dialogOptions.section;
+
+            entityResource.getPath(id, dialogOptions.entityType).then(function (path) {
+                navigationService.changeSection(section);
+                navigationService.showTree(section, {
+                    tree: section, path: path, forceReload: false, activate: true
+                });
+                var routePath = section + "/" + section + "/edit/" + id.toString();
+                $location.path(routePath).search("");
+            });
+        }
     });
