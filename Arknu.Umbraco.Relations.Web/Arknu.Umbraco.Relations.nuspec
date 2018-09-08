@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Arknu.Umbraco.Relations</id>
+    <version>1.1</version>
+    <title>Umbraco Relations Picker</title>
+    <authors>Arknu</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A content picker for Umbarco that saves as relations</description>
+    <releaseNotes>Upgraded to Umbraco 7.6</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>umbraco</tags>
+    <dependencies>
+      <dependency id="UmbracoCms.Core" version="7.6.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Arknu.Umbraco.Relations.dll" target="lib/net45" />
+    <file src="App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.config.controller.js"
+          target="content/App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.config.controller.js" />
+    <file src="App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.config.html"
+          target="content/App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.config.html" />
+    <file src="App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.controller.js" 
+          target="content/App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.controller.js" />
+    <file src="App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.html" 
+          target="content/App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.html" />
+    <file src="App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.resource.js" 
+          target="content/App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.resource.js" />
+    <file src="App_Plugins/Arknu.Umbraco.Relations/package.manifest"
+          target="content/App_Plugins/Arknu.Umbraco.Relations/package.manifest" />
+  </files>
+</package>
