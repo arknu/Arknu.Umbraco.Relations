@@ -11,6 +11,10 @@
                 <i class="{{node.icon}} hover-hide"></i>
                 {{node.name}}
             </a>
+
+            <div ng-if="model.showOpenButton">
+                <small><a href ng-click="showNode($index)"><localize key="open">Open</localize></a></small>
+            </div>
         </li>
     </ul>
 
