@@ -1,5 +1,5 @@
 ﻿angular.module("umbraco")
-    .controller("Arknu.Umbraco.Relations.Controller", function ($scope, $location, arknuRelationsResource, editorState, dialogService, entityResource, navigationService) {
+    .controller("Arknu.Umbraco.Relations.Controller", function ($scope, $location, arknuRelationsResource, editorState, dialogService, entityResource, navigationService, miniEditorHelper) {
         var type = $scope.model.config.relationTypeAlias;
 
         arknuRelationsResource.getRelations(editorState.current.id, type).then(function (response) {
@@ -45,6 +45,19 @@
             });
             
             
+        };
+
+        $scope.openMiniEditor = function (node) {
+            miniEditorHelper.launchMiniEditor({ id: node.contentId }).then(function (updatedNode) {
+                // update the node
+                node.name = updatedNode.name;
+                node.published = updatedNode.hasPublishedVersion;
+                if (entityType !== "Member") {
+                    entityResource.getUrl(updatedNode.id, entityType).then(function (data) {
+                        node.url = data;
+                    });
+                }
+            });
         };
 
         $scope.showNode = function (index) {

@@ -15,5 +15,15 @@ namespace Arknu.Umbraco.Relations.Models
         public int ContentId { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("icon")]
+        public string Icon { get; set; }
+        [JsonProperty("path")]
+        public string Path { get; set; }
+        [JsonProperty("url")]
+        public string Url { get; set; }
+        [JsonProperty("thrashed")]
+        public bool Thrashed { get; set; }
+        [JsonProperty("published")]
+        public bool Published { get; set; }
     }
 }

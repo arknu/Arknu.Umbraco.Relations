@@ -15,6 +15,13 @@
 						key: "relationTypeAlias",
 						view: "~/App_Plugins/Arknu.Umbraco.Relations/arknu.umbraco.relations.config.html"
 						
+					},
+					{
+						label: "Show open button",
+						description: "Show open button next to items",
+						key: "showOpenButton",
+						view: "boolean"
+						
 					}
 				]
 			}

@@ -49,23 +49,17 @@ namespace Arknu.Umbraco.Relations.Controllers
             }
             foreach (var r in relations.Where(x => x.RelationType.Alias == type))
             {
-                string name;
+                IContent target;
                 if (r.ChildId == id && reltype.IsBidirectional)
                 {
-                    var c = ApplicationContext.Services.ContentService.GetById(r.ParentId);
-                    name = c.Name;
+                    target = ApplicationContext.Services.ContentService.GetById(r.ParentId);
                 }
                 else
                 {
-                    var c = ApplicationContext.Services.ContentService.GetById(r.ChildId);
-                    name = c.Name;
+                    target = ApplicationContext.Services.ContentService.GetById(r.ChildId);
                 }
-                result.Add(new a.Relation()
-                {
-                    Name = name,
-                    RelationId = r.Id,
-                    ContentId = r.ChildId
-                });
+
+                result.Add(RelationFromContent(target, r));
             }
 
             return result;
@@ -78,12 +72,7 @@ namespace Arknu.Umbraco.Relations.Controllers
 
             var r = ApplicationContext.Services.RelationService.Relate(source, target, type);
 
-            return new a.Relation()
-            {
-                ContentId = targetid,
-                Name = target.Name,
-                RelationId = r.Id
-            };
+            return RelationFromContent(target, r);
         }
 
         public void DeleteRelation(int relationid)
@@ -93,6 +82,23 @@ namespace Arknu.Umbraco.Relations.Controllers
             ApplicationContext.Services.RelationService.Delete(r);
 
             
+        }
+
+
+        private a.Relation RelationFromContent(IContent target, IRelation relation )
+        {
+            return new a.Relation()
+            {
+                ContentId = target.Id,
+                Name = target.Name,
+                RelationId = relation.Id,
+                Icon = target.ContentType.Icon,
+                Path = target.Path,
+                Published = target.Published,
+                Thrashed = target.Trashed,
+                Url = (target.Published ? Umbraco.TypedContent(target.Id)?.Url ?? "" : "")
+                
+            };
         }
     }
 }
