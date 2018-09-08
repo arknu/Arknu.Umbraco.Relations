@@ -192,3 +192,7 @@ ModelManifest.xml
 /Arknu.Umbraco.Relations.Web/umbraco/*
 /Arknu.Umbraco.Relations.Web/umbraco_client/*
 /Arknu.Umbraco.Relations.Web/App_Data
+/Arknu.Umbraco.Relations.Web/media/created-packages/*
+
+vs/
+*.lock
