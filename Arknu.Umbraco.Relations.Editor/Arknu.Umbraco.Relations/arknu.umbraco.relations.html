@@ -1,4 +1,4 @@
-﻿<div ng-controller="Arknu.Umbraco.Relations.Controller" class="umb-editor umb-contentpicker">
+﻿<div ng-controller="Arknu.Umbraco.Relations.Controller">
     <div ng-model="model.items">
         <umb-node-preview ng-repeat="node in model.items"
                           icon="node.icon"
@@ -9,7 +9,7 @@
                           allow-remove="true"
                           allow-open="model.config.showOpenButton"
                           on-remove="remove($index)"
-                          on-open="openMiniEditor(node)">
+                          on-open="showNode(node)">
         </umb-node-preview>
     </div>
 
